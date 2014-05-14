@@ -2,7 +2,11 @@
   "name": "anvil-connect-jwt",
   "version": "0.0.0",
   "description": "JWT modeling library used by Anvil Connect",
-  "author": "",
+  "author": {
+    "name": "Christian Smith",
+    "email": "smith@anvil.io",
+    "url": "http://anvil.io"
+  },
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script/register -R spec --watch"
