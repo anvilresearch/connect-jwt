@@ -1,0 +1,39 @@
+{
+  "name": "anvil-connect-jwt",
+  "version": "0.0.0",
+  "description": "JWT modeling library used by Anvil Connect",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script/register -R spec --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/christiansmith/anvil-connect-jwt.git"
+  },
+  "keywords": [
+    "JWT",
+    "JWS",
+    "JWE",
+    "OpenID",
+    "OpenID Connect",
+    "OAuth",
+    "OAuth 2.0"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christiansmith/anvil-connect-jwt/issues"
+  },
+  "homepage": "https://github.com/christiansmith/anvil-connect-jwt",
+  "devDependencies": {
+    "sinon-chai": "~2.5.0",
+    "coffee-script": "~1.7.1",
+    "chai": "~1.9.1",
+    "sinon": "~1.9.1"
+  },
+  "dependencies": {
+    "jwa": "0.0.2",
+    "base64url": "0.0.6",
+    "uri-js": "~1.4.2"
+  }
+}
