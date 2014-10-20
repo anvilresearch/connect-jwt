@@ -1215,7 +1215,7 @@ describe 'JWT', ->
           base64url.decode(token.split('.')[1]).should.equal JSON.stringify(payload)
 
         it 'should append a HMAC SHA256 signature', ->
-          token.split('.')[2].length.should.equal 58
+          token.split('.')[2].length.should.equal 43
 
 
 
@@ -1241,7 +1241,7 @@ describe 'JWT', ->
           base64url.decode(token.split('.')[1]).should.equal JSON.stringify(payload)
 
         it 'should append a RSA SHA256 signature', ->
-          token.split('.')[2].length.should.equal 456
+          token.split('.')[2].length.should.equal 342
 
 
 
@@ -1266,7 +1266,7 @@ describe 'JWT', ->
           base64url.decode(token.split('.')[1]).should.equal JSON.stringify(payload)
 
         it 'should append a ECDSA SHA256 signature', ->
-          token.split('.')[2].length.should.equal 456
+          token.split('.')[2].length.should.equal 342
 
 
 
@@ -1467,7 +1467,7 @@ describe 'JWT', ->
         before ->
           token = 'eyJhbGciOiJIUzI1NiJ9.' +
                   'eyJpc3MiOiJodHRwOi8vYW52aWwuaW8ifQ.' +
-                  'UjFRb0dUSmN6RFpxc2VOUXQ5eVhUM1lvT1kxamtURVBBeEZ5SzkzaFktOA'
+                  'R1QoGTJczDZqseNQt9yXT3YoOY1jkTEPAxFyK93hY-8'
           MyJWT = JWT.define
             header: { alg: 'HS256' }
             headers: ['alg']
@@ -1481,7 +1481,7 @@ describe 'JWT', ->
         it 'should base64url decode the payload', ->
           jwt.payload.iss.should.equal 'http://anvil.io'
 
-        it 'should have an empty signature', ->
+        it 'should have a signature', ->
           jwt.signature.should.equal 'R1QoGTJczDZqseNQt9yXT3YoOY1jkTEPAxFyK93hY-8'
 
 
@@ -1492,7 +1492,7 @@ describe 'JWT', ->
         before ->
           token = 'eyJhbGciOiJSUzI1NiJ9.' +
                   'eyJpc3MiOiJodHRwOi8vYW52aWwuaW8ifQ.' +
-                  'UEMyUkdJanZMaHUyU20tZFpncUJtRmd5OEZXU3M0SkZXUVg0ZTN4T2xyN2I3eHhGUzAwQW90V3ZaQ1RlbWV5aWdVdmhpQlhuUUFLcjhtbzR1WElFRWQybkhLMDhZdW4tQnpuOW0yYnVZcWVkRk8wX3h0UDVURzFtTm00akdRM0RRcFpTM0NrVWl6cHZJN21iN3hnb3lERklrZnQ3b2ZFSUxJaGJ4eXNtTTd5RmVTb1VYbkw0TVBXd2prQmtFWVNtTmpiVHJaUzBpRG1rNTI5S3lpa0hJS2RrbExka0R0dENESTdBN0JGNUZiMmZ1QnNYdU54bGtETGRkb2FlRTdzeVJOZDV1czQ1QzB2b2tKSUNxUll1NUsyR1BKOEdudGo4Qk9tZWpiWmVvVDA3RVRvTWhoTkJVc09MamdtQkR5ZmN3MWU4bDE4R1BLcEJ0S0pPOUl3NnBB'
+                  'PC2RGIjvLhu2Sm-dZgqBmFgy8FWSs4JFWQX4e3xOlr7b7xxFS00AotWvZCTemeyigUvhiBXnQAKr8mo4uXIEEd2nHK08Yun-Bzn9m2buYqedFO0_xtP5TG1mNm4jGQ3DQpZS3CkUizpvI7mb7xgoyDFIkft7ofEILIhbxysmM7yFeSoUXnL4MPWwjkBkEYSmNjbTrZS0iDmk529KyikHIKdklLdkDttCDI7A7BF5Fb2fuBsXuNxlkDLddoaeE7syRNd5us45C0vokJICqRYu5K2GPJ8Gntj8BOmejbZeoT07EToMhhNBUsOLjgmBDyfcw1e8l18GPKpBtKJO9Iw6pA'
           MyJWT = JWT.define
             header: { alg: 'RS256' }
             headers: ['alg']
@@ -1520,7 +1520,7 @@ describe 'JWT', ->
 
 
         before ->
-          token = 'eyJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYW52aWwuaW8ifQ.SHJ6eXY3eUNXbm1EV0Z2RHJmMmZSVktKSW9ZbVB4a1hpb0ZOUS1NVmxhSE1aTFFiYzZsR2tQTV9pRTlnTHc5NU55c3d1MlZnd3hxUm9hdDRDWGl6MlV6RU9wMUxaU2FSRTRBQy1WSWVNT3gwRi1iQi1wOFAtYVYzRTkwb24xcU1OUld1SjlKLUk2RmF4c1Q0ZE8zRm44Zi0wZ0JrMEtMTTZCZW9YXzNoRXRVX2tqWHdhN1pkZ0dBUGdsWEpIWXFnNFhLbm9tUVNycFVBT0NsUFpDbE5aWndKbG9DcERVU05OcnRhY2p1U09FVlFvMXZXV0hNWE5TMzhWeUQtVzFkSXZSVGJMTWhUd0wxUndhZTJnQ2pCWUIxZ3IzeFpzcU0tTXZQWGxYMkJ1ZHR5WXgtbmNEU2tMS3lMRXVDdDJ1WGNhMlVqZndmY0NYbXNPZUQ2MElzTHZn'
+          token = 'eyJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYW52aWwuaW8ifQ.Hrzyv7yCWnmDWFvDrf2fRVKJIoYmPxkXioFNQ-MVlaHMZLQbc6lGkPM_iE9gLw95Nyswu2VgwxqRoat4CXiz2UzEOp1LZSaRE4AC-VIeMOx0F-bB-p8P-aV3E90on1qMNRWuJ9J-I6FaxsT4dO3Fn8f-0gBk0KLM6BeoX_3hEtU_kjXwa7ZdgGAPglXJHYqg4XKnomQSrpUAOClPZClNZZwJloCpDUSNNrtacjuSOEVQo1vWWHMXNS38VyD-W1dIvRTbLMhTwL1Rwae2gCjBYB1gr3xZsqM-MvPXlX2BudtyYx-ncDSkLKyLEuCt2uXca2UjfwfcCXmsOeD60IsLvg'
           MyJWT = JWT.define
             header: { alg: 'ES256' }
             headers: ['alg']
