@@ -1,7 +1,7 @@
 {
   "name": "anvil-connect-jwt",
   "version": "0.1.2",
-  "description": "JWT modeling library used by Anvil Connect",
+  "description": "Anvil Connect JWT library for Node.js",
   "author": {
     "name": "Christian Smith",
     "email": "smith@anvil.io",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/christiansmith/anvil-connect-jwt.git"
+    "url": "https://github.com/anvilresearch/connect-jwt.git"
   },
   "keywords": [
     "JWT",
@@ -26,9 +26,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/christiansmith/anvil-connect-jwt/issues"
+    "url": "https://github.com/anvilresearch/connect-jwt/issues"
   },
-  "homepage": "https://github.com/christiansmith/anvil-connect-jwt",
+  "homepage": "https://github.com/anvilresearch/connect-jwt",
   "devDependencies": {
     "sinon-chai": "~2.5.0",
     "coffee-script": "~1.7.1",
