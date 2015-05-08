@@ -51,6 +51,6 @@ All JWTs must conform to the JWT/JWS/JWE/JW\* specifications, but applications m
 
 ## The MIT License (MIT)
 
-Copyright (c) 2014 Christian Smith
+Copyright (c) 2015 Anvil Research, Inc.
 
 
