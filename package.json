@@ -30,10 +30,10 @@
   },
   "homepage": "https://github.com/anvilresearch/connect-jwt",
   "devDependencies": {
-    "sinon-chai": "~2.5.0",
-    "coffee-script": "~1.7.1",
-    "chai": "~1.9.1",
-    "sinon": "~1.9.1"
+    "chai": "^3.0.0",
+    "coffee-script": "^1.9.3",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.8.0"
   },
   "dependencies": {
     "base64url": "0.0.6",
