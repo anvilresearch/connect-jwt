@@ -36,9 +36,9 @@
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
-    "base64url": "0.0.6",
-    "jsjws": "^0.7.1",
-    "jwa": "0.0.2",
-    "uri-js": "~1.4.2"
+    "base64url": "^1.0.4",
+    "jsjws": "^2.0.3",
+    "jwa": "^1.0.0",
+    "valid-url": "^1.0.9"
   }
 }

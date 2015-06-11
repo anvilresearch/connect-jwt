@@ -240,11 +240,11 @@ describe 'JWT', ->
 
     it 'should accept a valid URI', ->
       JWT.formats['URI']("http://anvil.io").should.be.true
-      JWT.formats['URI']("anvil.io").should.be.true
 
     it 'should not accept an invalid URI', ->
       JWT.formats['URI']("http://an%vil.io").should.be.false
       JWT.formats['URI']("an%vil.io").should.be.false
+      JWT.formats['URI']("anvil.io").should.be.false
 
 
 
