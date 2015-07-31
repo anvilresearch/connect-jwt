@@ -214,6 +214,25 @@ describe 'JWT', ->
 
 
 
+  describe 'String*', ->
+
+    it 'should accept an empty array', ->
+      JWT.formats['String*']([]).should.be.true
+
+    it 'should accept an array of strings', ->
+      JWT.formats['String*'](['a', 'b', 'c']).should.be.true
+
+    it 'should not accept a non-array', ->
+      JWT.formats['String*']('nope').should.be.false
+      JWT.formats['String*'](true).should.be.false
+      JWT.formats['String*']({}).should.be.false
+
+    it 'should not accept non-string array elements', ->
+      JWT.formats['String*']([false, 'string']).should.be.false
+
+
+
+
   describe 'CaseSensitiveString', ->
 
 
