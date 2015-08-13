@@ -1271,7 +1271,7 @@ describe 'JWT', ->
           headers = ['alg']
           payload = { iss: 'http://anvil.io' }
           privateKey = require('fs')
-            .readFileSync('test/lib/keys/private.pem')
+            .readFileSync('test/lib/keys/private_ecdsa.pem')
             .toString('ascii')
 
           MyJWT = JWT.define {header,headers}
@@ -1285,7 +1285,7 @@ describe 'JWT', ->
           base64url.decode(token.split('.')[1]).should.equal JSON.stringify(payload)
 
         it 'should append a ECDSA SHA256 signature', ->
-          token.split('.')[2].length.should.equal 342
+          token.split('.')[2].length.should.equal 86
 
 
 
@@ -1539,14 +1539,14 @@ describe 'JWT', ->
 
 
         before ->
-          token = 'eyJhbGciOiJFUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYW52aWwuaW8ifQ.Hrzyv7yCWnmDWFvDrf2fRVKJIoYmPxkXioFNQ-MVlaHMZLQbc6lGkPM_iE9gLw95Nyswu2VgwxqRoat4CXiz2UzEOp1LZSaRE4AC-VIeMOx0F-bB-p8P-aV3E90on1qMNRWuJ9J-I6FaxsT4dO3Fn8f-0gBk0KLM6BeoX_3hEtU_kjXwa7ZdgGAPglXJHYqg4XKnomQSrpUAOClPZClNZZwJloCpDUSNNrtacjuSOEVQo1vWWHMXNS38VyD-W1dIvRTbLMhTwL1Rwae2gCjBYB1gr3xZsqM-MvPXlX2BudtyYx-ncDSkLKyLEuCt2uXca2UjfwfcCXmsOeD60IsLvg'
+          token = 'eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwOi8vYW52aWwuaW8ifQ.VM-CuRkxV6yyFEmYfkktuq6DZHLvJ4w6SE41_yRmKd5rL-_Su5oJkkoQVw3zw2zJgGYFl3p7gYdQvwUOR7LUig'
           MyJWT = JWT.define
             header: { alg: 'ES256' }
             headers: ['alg']
             claims: ['iss']
 
           publicKey = require('fs')
-            .readFileSync('./test/lib/keys/public.pem')
+            .readFileSync('./test/lib/keys/public_ecdsa.pem')
             .toString('ascii')
 
           jwt = MyJWT.decode token, publicKey
@@ -1558,7 +1558,7 @@ describe 'JWT', ->
           jwt.payload.iss.should.equal 'http://anvil.io'
 
         it 'should have a signature', ->
-          jwt.signature.should.equal 'Hrzyv7yCWnmDWFvDrf2fRVKJIoYmPxkXioFNQ-MVlaHMZLQbc6lGkPM_iE9gLw95Nyswu2VgwxqRoat4CXiz2UzEOp1LZSaRE4AC-VIeMOx0F-bB-p8P-aV3E90on1qMNRWuJ9J-I6FaxsT4dO3Fn8f-0gBk0KLM6BeoX_3hEtU_kjXwa7ZdgGAPglXJHYqg4XKnomQSrpUAOClPZClNZZwJloCpDUSNNrtacjuSOEVQo1vWWHMXNS38VyD-W1dIvRTbLMhTwL1Rwae2gCjBYB1gr3xZsqM-MvPXlX2BudtyYx-ncDSkLKyLEuCt2uXca2UjfwfcCXmsOeD60IsLvg'
+          jwt.signature.should.equal 'VM-CuRkxV6yyFEmYfkktuq6DZHLvJ4w6SE41_yRmKd5rL-_Su5oJkkoQVw3zw2zJgGYFl3p7gYdQvwUOR7LUig'
 
 
     describe 'with encryption', ->
