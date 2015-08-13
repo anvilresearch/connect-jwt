@@ -30,12 +30,14 @@
   },
   "homepage": "https://github.com/anvilresearch/connect-jwt",
   "devDependencies": {
+    "mocha": "^2.2.5",
     "chai": "^3.0.0",
     "coffee-script": "^1.9.3",
     "sinon": "^1.14.1",
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
+    "lodash": "^3.10.1",
     "base64url": "^1.0.4",
     "jsjws": "^2.0.3",
     "jwa": "^1.0.0",
