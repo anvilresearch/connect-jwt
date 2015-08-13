@@ -39,7 +39,7 @@
   "dependencies": {
     "lodash": "^3.10.1",
     "base64url": "^1.0.4",
-    "jsjws": "^2.0.3",
+    "jsrsasign": "^4.8.3",
     "jwa": "^1.0.0",
     "valid-url": "^1.0.9"
   }
