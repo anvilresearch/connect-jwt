@@ -9,7 +9,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "eslint . && echo Code looks good! && mocha --compilers coffee:coffee-script/register -R spec --watch"
+    "test": "mocha test && eslint . && echo Code looks good!",
+    "lint": "eslint . && echo Code looks good!",
+    "test-watch": "mocha test --watch"
   },
   "repository": {
     "type": "git",
