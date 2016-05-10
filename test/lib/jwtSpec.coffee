@@ -536,7 +536,8 @@ describe 'JWT', ->
     #   Use of this claim is OPTIONAL.
 
     it 'should specify "aud" as an array of StringOrURI values', ->
-      JWT.registeredClaims.aud.format.should.equal 'StringOrURI*'
+      JWT.registeredClaims.aud.format.should.equal 'StringOrURI'
+      # JWT.registeredClaims.aud.format.should.equal 'StringOrURI*'
 
 
 
@@ -604,7 +605,8 @@ describe 'JWT', ->
     #   is a case-sensitive string.  Use of this claim is OPTIONAL.
 
     it 'should specify "jti" as a case-sensitive string', ->
-      JWT.registeredClaims.jti.format.should.equal 'CaseSensitiveString'
+      JWT.registeredClaims.jti.format.should.equal 'String'
+      # JWT.registeredClaims.jti.format.should.equal 'CaseSensitiveString'
 
 
 
